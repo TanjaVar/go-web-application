@@ -5,15 +5,17 @@ import (
 	"net/http"
 )
 
+
 func Home(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "this is Home page")
 }
 
 func About(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "This is About page")
+	sum := addValue(2, 2)
+	_, _ = fmt.Fprintf(w, "This is the about page and 2 + 2 is %d", sum)
 }
 
-func AddValue(x, y int) int {
+func addValue(x, y int) int {
 	return x + y
 }
 
